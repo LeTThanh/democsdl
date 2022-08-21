@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.springframework.org/schema/data/jaxb">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student</title>
+    <link type="text/css" rel="stylesheet" href="bootstrap.min.css" th:href="@{bootstrap.min.css}"/>
+</head>
+<body>
+<div class="col-3"></div>
+<div class="container col-6">
+    <h1>New Student</h1>
+    <div class="col-md-auto">
+        <form th:object="${student}" th:action="@{save}" action="#" method="post">
+            <div>
+                <label>First Name</label>
+                <input type="text" th:field="*{firstName}" class="form-control" placeholder="First Name"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <div>
+                <label>Last Name</label>
+                <input type="text" th:field="*{lastName}" class="form-control" placeholder="Last Name"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <div>
+                <label>Email</label>
+                <input type="text" th:field="*{email}" class="form-control" placeholder="Email"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <div>
+                <label>Phone Number</label>
+                <input type="text" th:field="*{phoneNumber}" class="form-control" placeholder="Phone Number"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <div>
+                <label>GPA</label>
+                <input type="number" step="0.01" min="0" max="4" th:field="*{gpa}" class="form-control" placeholder="GPA"/>
+            </div>
+            <div style="clear: both; display: block; height: 10px"></div>
+            <input type="submit" class="btn btn-success" value="Save"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>
